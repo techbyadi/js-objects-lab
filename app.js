@@ -20,7 +20,7 @@ const game = {
   ],
 }
 
-console.dir(pokemon, { maxArrayLength: null })
+//console.dir(pokemon, { maxArrayLength: null })
 console.log(game.gyms);
 
 /*
@@ -211,7 +211,7 @@ For example, if five gym objects have a value of `true` on their `completed` pro
 Solve Exercise 13 here:
 */
 
-
+console.log('-------');
 game.gymStatus = (() => {
   const gymTally = {
     completed: 0,
@@ -228,5 +228,38 @@ game.gymStatus = (() => {
 
   console.log(gymTally);
 })
+console.log(game);
 
 game.gymStatus();
+
+
+/*
+Exercise 14
+1. Add a `partyCount` method to `game` that counts the number of Pokémon in your party.
+
+This method should:
+  - Not accept any arguments.
+  - Count the number of Pokemon in the party.
+  - return the found number of Pokemon in the party.
+
+Solve Exercise 14 here:
+*/
+
+game.partyCount = (() => {
+  
+  const getNumberOfPokemon = {
+    numberOfPokemon: 0
+  }
+
+  game.party.forEach((item) => {
+    if(item.starter === true){
+      getNumberOfPokemon.numberOfPokemon += 1;
+    }
+  })
+  return getNumberOfPokemon.numberOfPokemon;
+})
+
+console.log('Number of Pokemon',game.partyCount());
+
+
+
